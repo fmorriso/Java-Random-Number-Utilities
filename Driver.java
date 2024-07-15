@@ -2,20 +2,25 @@ import java.text.NumberFormat;
 
 public class Driver {
 
+    private static final NumberFormat formatter = NumberFormat.getNumberInstance();
+
     public static void main(String[] args) {
         System.out.format("Java Random Number Utilities using Java version %s%n", getJavaVersion());
         int iterations = 1_000_000;
 
         testRandomDouble(10, 20, iterations);
         testRandomDouble(1, 2, iterations);
+
         testRandomDoubleWithTolerance(10, 20, 0.001, iterations);
         testRandomDoubleWithTolerance(1, 2, 0.001, iterations);
-        testRandomDoubleWithTolerance(-100, 100, 0.001, iterations);
+        testRandomDoubleWithTolerance(-100, 100, 0.01, iterations);
+
+
     }
 
 
     private static void testRandomDoubleWithTolerance(double min, double max, double tolerance, int iterations) {
-        NumberFormat formatter = NumberFormat.getNumberInstance();
+
         System.out.format("Max Iterations: %s, tolerance=%.5f%n", formatter.format(iterations), tolerance);
 
         double highestValue = 0;
@@ -24,8 +29,10 @@ public class Driver {
         double lowestValue = Double.MAX_VALUE;
         int lowestCount = 0;
 
+        double x;
+
         for (int i = 0; i < iterations; i++) {
-            double x = RandomNumberUtilities.getRandomDoubleInRangeWithTolerance(min, max, tolerance);
+            x = RandomNumberUtilities.getRandomDoubleInRangeWithTolerance(min, max, tolerance);
 //            System.out.format("x = %.4f%n", x);
 
             lowestValue = Math.min(lowestValue, x);
@@ -40,7 +47,6 @@ public class Driver {
     }
 
     private static void testRandomDouble(double min, double max, int iterations) {
-        NumberFormat formatter = NumberFormat.getNumberInstance();
 
         double highestValue = 0;
         int highestCount = 0;
@@ -50,8 +56,9 @@ public class Driver {
 
         System.out.format("Max Iterations: %s%n", formatter.format(iterations));
 
+        double x;
         for (int i = 0; i < iterations; i++) {
-            double x = RandomNumberUtilities.getRandomDoubleInRange(min, max);
+            x = RandomNumberUtilities.getRandomDoubleInRange(min, max);
             lowestValue = Math.min(lowestValue, x);
             highestValue = Math.max(highestValue, x);
             // System.out.format("x = %.2f%n", x);
