@@ -1,4 +1,5 @@
 import java.text.NumberFormat;
+import java.util.Random;
 
 public class Driver {
 
@@ -6,7 +7,9 @@ public class Driver {
 
     public static void main(String[] args) {
         System.out.format("Java Random Number Utilities using Java version %s%n", getJavaVersion());
-        int iterations = 1_000; //1_000_000;
+
+        int iterations = 1_000_000;
+
 
         testRandomDouble(10, 20, iterations);
         testRandomDouble(1, 2, iterations);
@@ -23,6 +26,9 @@ public class Driver {
         testRandomWholeNumber(100, 200, iterations);
         testRandomWholeNumber(1, 6, iterations);
 
+        // These will throw exceptions, so leave commented unless curious
+        // testRandomWholeNumber(6, 1, iterations);
+        // testRandomDouble(2, 1, iterations);
     }
 
     private static void testRandomWholeNumber(int min, int max, int iterations) {
