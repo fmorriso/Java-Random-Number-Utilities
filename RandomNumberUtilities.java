@@ -25,7 +25,7 @@ public class RandomNumberUtilities {
 
         if(min >= max) throw new IllegalArgumentException("Min must be less than max");
 
-        final double tolerance = (max - min) / 100;
+        final double tolerance = (max - min) / 10_000;
         return getRandomDoubleInRangeWithTolerance(min, max, tolerance);
     }
 

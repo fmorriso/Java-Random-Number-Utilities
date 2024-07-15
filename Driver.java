@@ -6,14 +6,19 @@ public class Driver {
 
     public static void main(String[] args) {
         System.out.format("Java Random Number Utilities using Java version %s%n", getJavaVersion());
-        int iterations = 1_000_000;
+        int iterations = 1_000; //1_000_000;
 
         testRandomDouble(10, 20, iterations);
         testRandomDouble(1, 2, iterations);
 
         testRandomDoubleWithTolerance(10, 20, 0.001, iterations);
         testRandomDoubleWithTolerance(1, 2, 0.001, iterations);
+
+        testRandomDouble(-100, 100, iterations);
+        testRandomDoubleWithTolerance(-100, 100, 0.001, iterations);
         testRandomDoubleWithTolerance(-100, 100, 0.01, iterations);
+        testRandomDoubleWithTolerance(-100, 100, 0.1, iterations);
+        testRandomDoubleWithTolerance(-100, 100, 1.0, iterations);
 
         testRandomWholeNumber(100, 200, iterations);
         testRandomWholeNumber(1, 6, iterations);
