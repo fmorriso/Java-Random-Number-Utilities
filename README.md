@@ -1,6 +1,8 @@
 # Java Random Number Utilities
 
-A set of random number utilities that handles edge cases under user control.
+A set of random number utilities that defaults to including both the minimum and maximum values 
+in the range of eligible return values plus allows some user control of the tolerance value used in
+generating random double precision values.
 
 ## Getting started
 

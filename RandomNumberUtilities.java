@@ -39,9 +39,10 @@ public class RandomNumberUtilities {
      * of eligible random values.
      */
     public static double getRandomDoubleInRangeWithTolerance(double min, double max, double tolerance) {
-        double minWithTolerance = min - tolerance;
-        double maxWithTolerance = max + tolerance;
-        double range = maxWithTolerance - minWithTolerance;
+
+        final double minWithTolerance = min - tolerance;
+        final double maxWithTolerance = max + tolerance;
+        final double range = maxWithTolerance - minWithTolerance;
 
         double randomNumber = rand.nextDouble() * range + minWithTolerance;
         if (randomNumber >= min && randomNumber <= max) {
