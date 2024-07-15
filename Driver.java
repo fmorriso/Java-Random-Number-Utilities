@@ -22,7 +22,7 @@ public class Driver {
 
     private static void testRandomWholeNumber(int min, int max, int iterations) {
 
-        System.out.format("Max Iterations: %s%n", formatter.format(iterations));
+        System.out.format("Min: %d, Max: %d, Iterations: %s%n", min, max, formatter.format(iterations));
 
         int highestValue = Integer.MIN_VALUE;
         int highestCount = 0;
@@ -50,7 +50,7 @@ public class Driver {
 
     private static void testRandomDoubleWithTolerance(double min, double max, double tolerance, int iterations) {
 
-        System.out.format("Max Iterations: %s, tolerance=%.5f%n", formatter.format(iterations), tolerance);
+        System.out.format("Min: %.1f, Max: %.1f, Iterations: %s, tolerance=%.5f%n", min, max, formatter.format(iterations), tolerance);
 
         double highestValue = 0;
         int highestCount = 0;
@@ -83,7 +83,7 @@ public class Driver {
         double lowestValue = Double.MAX_VALUE;
         int lowestCount = 0;
 
-        System.out.format("Max Iterations: %s%n", formatter.format(iterations));
+        System.out.format("Min: %.1f, Max: %.1f, Iterations: %s%n", min, max, formatter.format(iterations));
 
         double x;
         for (int i = 0; i < iterations; i++) {

@@ -1,24 +1,29 @@
 import java.util.Random;
 
+/**
+ * A class of methods that returns random numbers in a natural way (both ends are included) rather than
+ * the unnatural way the built-in utilities work.
+ */
 public class RandomNumberUtilities {
 
     private static Random rand = new Random();
 
 
     /**
-     * Return a random number of type double in the range between the specified minimum and maximum,
-     * inclusive of both the minimum and maximum, using the specified positive, non-zero
-     * tolerance.
+     * Return a random number of type double in the range between the specified minimum (inclusive)
+     * and maximum (inclusive).
      *
-     * @param min       - the minimum value in the range
-     * @param max       - the maximum value in the range
+     * @param min       - the minimum value in the range to include in the eligible values to return
+     * @param max       - the maximum value in the range  to include in the eligible values to return
      * @apiNote - The nature of how Java's built-in random number generator works
-     *            for type double means that the values returned will almost never
+     *            for type double means that, without some intervention, the values returned would almost never
      *            include either the minimum or maximum value even though the minimum
-     *            value is eligible to be returned.
+     *            value is eligible to be returned.  In this implementation, we introduce logic to force
+     *            both the minimum and maximum to be eligible to be returned.
      */
     public static double getRandomDoubleInRange(double min, double max) {
-        return rand.nextDouble() * (max - min) + min;
+        final double tolerance = (max - min) / 100;
+        return getRandomDoubleInRangeWithTolerance(min, max, tolerance);
     }
 
     /**
