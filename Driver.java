@@ -7,15 +7,16 @@ public class Driver {
     public static void main(String[] args) {
         System.out.format("Java Random Number Utilities using Java version %s%n", getJavaVersion());
         int iterations = 1_000_000;
-/*
+
         testRandomDouble(10, 20, iterations);
         testRandomDouble(1, 2, iterations);
 
         testRandomDoubleWithTolerance(10, 20, 0.001, iterations);
         testRandomDoubleWithTolerance(1, 2, 0.001, iterations);
         testRandomDoubleWithTolerance(-100, 100, 0.01, iterations);
-*/
+
         testRandomWholeNumber(100, 200, iterations);
+        testRandomWholeNumber(1, 6, iterations);
 
     }
 
