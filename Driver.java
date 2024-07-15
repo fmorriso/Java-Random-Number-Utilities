@@ -8,7 +8,9 @@ public class Driver {
         testRandomDouble(1, 2);
         testRandomDoubleWithTolerance(10, 20, 0.001);
         testRandomDoubleWithTolerance(1, 2, 0.001);
+        testRandomDoubleWithTolerance(-100, 100, 0.001);
     }
+
 
     private static void testRandomDoubleWithTolerance(double min, double max, double tolerance) {
         NumberFormat formatter = NumberFormat.getNumberInstance();
@@ -19,7 +21,8 @@ public class Driver {
         double highestValue = 0;
         int highestCount = 0;
 
-        double lowestValue = Double.MAX_VALUE;;
+        double lowestValue = Double.MAX_VALUE;
+        ;
         int lowestCount = 0;
 
         for (int i = 0; i < maxIterations; i++) {
@@ -43,7 +46,8 @@ public class Driver {
         double highestValue = 0;
         int highestCount = 0;
 
-        double lowestValue = Double.MAX_VALUE;;
+        double lowestValue = Double.MAX_VALUE;
+        ;
         int lowestCount = 0;
 
         int maxIterations = 1_000_000;
@@ -62,12 +66,14 @@ public class Driver {
         System.out.format("lowestValue = %.6f, count=%d%n", lowestValue, lowestCount);
     }
 
-    /** get the java version that is running the current program
+    /**
+     * get the java version that is running the current program
+     *
      * @return string containing the java version running the current program
      */
-    private static String getJavaVersion()
-    {
+    private static String getJavaVersion() {
         Runtime.Version runTimeVersion = Runtime.version();
         return String.format("%s.%s.%s.%s", runTimeVersion.feature(), runTimeVersion.interim(), runTimeVersion.update(), runTimeVersion.patch());
     }
+
 }
