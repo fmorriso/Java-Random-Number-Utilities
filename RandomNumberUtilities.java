@@ -4,6 +4,19 @@ public class RandomNumberUtilities {
 
     private static Random rand = new Random();
 
+
+    /**
+     * Return a random number of type double in the range between the specified minimum and maximum,
+     * inclusive of both the minimum and maximum, using the specified positive, non-zero
+     * tolerance.
+     *
+     * @param min       - the minimum value in the range
+     * @param max       - the maximum value in the range
+     * @apiNote - The nature of how Java's built-in random number generator works
+     *            for type double means that the values returned will almost never
+     *            include either the minimum or maximum value even though the minimum
+     *            value is eligible to be returned.
+     */
     public static double getRandomDoubleInRange(double min, double max) {
         return rand.nextDouble() * (max - min) + min;
     }
