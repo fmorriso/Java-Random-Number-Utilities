@@ -5,7 +5,9 @@ public class Driver {
     public static void main(String[] args) {
         System.out.format("Java Random Number Utilities using Java version %s%n", getJavaVersion());
         testRandomDouble(10, 20);
+        testRandomDouble(1, 2);
         testRandomDoubleWithTolerance(10, 20, 0.001);
+        testRandomDoubleWithTolerance(1, 2, 0.001);
     }
 
     private static void testRandomDoubleWithTolerance(double min, double max, double tolerance) {
@@ -23,8 +25,12 @@ public class Driver {
         for (int i = 0; i < maxIterations; i++) {
             double x = RandomNumberUtilities.getRandomDoubleInRangeWithTolerance(min, max, tolerance);
 //            System.out.format("x = %.4f%n", x);
+
             lowestValue = Math.min(lowestValue, x);
             highestValue = Math.max(highestValue, x);
+
+            if (x == max) highestCount++;
+            else if (x == min) lowestCount++;
         }
 
         System.out.format("highestValue = %.6f, count = %d%n", highestValue, highestCount);
