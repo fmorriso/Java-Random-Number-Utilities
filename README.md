@@ -1,6 +1,6 @@
 # Java Random Number Utilities
 
-
+A set of random number utilities that handles edge cases under user control.
 
 ## Getting started
 
