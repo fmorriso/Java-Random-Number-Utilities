@@ -22,6 +22,9 @@ public class RandomNumberUtilities {
      *            both the minimum and maximum to be eligible to be returned.
      */
     public static double getRandomDoubleInRange(double min, double max) {
+
+        if(min >= max) throw new IllegalArgumentException("Min must be less than max");
+
         final double tolerance = (max - min) / 100;
         return getRandomDoubleInRangeWithTolerance(min, max, tolerance);
     }
@@ -39,6 +42,9 @@ public class RandomNumberUtilities {
      * of eligible random values.
      */
     public static double getRandomDoubleInRangeWithTolerance(double min, double max, double tolerance) {
+
+        if(tolerance <= 0) throw new IllegalArgumentException("Tolerance must be greater than zero");
+        if(min >= max) throw new IllegalArgumentException("Min must be less than max");
 
         final double minWithTolerance = min - tolerance;
         final double maxWithTolerance = max + tolerance;
@@ -63,6 +69,9 @@ public class RandomNumberUtilities {
      *          make sure it is eligible to be returned.
      */
     public static int getRandomIntInRange(int min, int max) {
+
+        if(min >= max) throw new IllegalArgumentException("Min must be less than max");
+
         return (int) (rand.nextDouble() * (max + 1 - min)) + min;
     }
 
