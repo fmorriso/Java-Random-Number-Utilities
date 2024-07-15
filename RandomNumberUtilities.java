@@ -47,8 +47,17 @@ public class RandomNumberUtilities {
             return max;
     }
 
+    /**
+     * Returns a random whole number between the specified minimum and maximum
+     * @param min - The minimum value in the range (inclusive)
+     * @param max - The maximum value in the range (inclusive)
+     * @return A random whole number in the range (max - min) + min.
+     * @apiNote Since the built-in random number generator does not by design
+     *          include max in the eligible range, we have to add 1 to max in order to
+     *          make sure it is eligible to be returned.
+     */
     public static int getRandomIntInRange(int min, int max) {
-        return rand.nextInt() * (max - min) + min;
+        return (int) (rand.nextDouble() * (max + 1 - min)) + min;
     }
 
 }

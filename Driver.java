@@ -7,15 +7,43 @@ public class Driver {
     public static void main(String[] args) {
         System.out.format("Java Random Number Utilities using Java version %s%n", getJavaVersion());
         int iterations = 1_000_000;
-
+/*
         testRandomDouble(10, 20, iterations);
         testRandomDouble(1, 2, iterations);
 
         testRandomDoubleWithTolerance(10, 20, 0.001, iterations);
         testRandomDoubleWithTolerance(1, 2, 0.001, iterations);
         testRandomDoubleWithTolerance(-100, 100, 0.01, iterations);
+*/
+        testRandomWholeNumber(100, 200, iterations);
 
+    }
 
+    private static void testRandomWholeNumber(int min, int max, int iterations) {
+
+        System.out.format("Max Iterations: %s%n", formatter.format(iterations));
+
+        int highestValue = Integer.MIN_VALUE;
+        int highestCount = 0;
+
+        int lowestValue = Integer.MAX_VALUE;
+        int lowestCount = 0;
+
+        int n;
+
+        for (int i = 0; i < iterations; i++) {
+            n = RandomNumberUtilities.getRandomIntInRange(min, max);
+//            System.out.format("x = %d%n", n);
+
+            lowestValue = Math.min(lowestValue, n);
+            highestValue = Math.max(highestValue, n);
+
+            if (n == max) highestCount++;
+            else if (n == min) lowestCount++;
+        }
+
+        System.out.format("highestValue = %d, count = %d%n", highestValue, highestCount);
+        System.out.format("lowestValue = %d, count=%d%n", lowestValue, lowestCount);
     }
 
 
