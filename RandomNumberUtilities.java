@@ -48,7 +48,7 @@ public class RandomNumberUtilities {
         final double minWithTolerance = min - tolerance;
         final double maxWithTolerance = max + tolerance;
         final double range = maxWithTolerance - minWithTolerance;
-        // test
+
         double randomNumber = rand.nextDouble() * range + minWithTolerance;
         if (randomNumber >= min && randomNumber <= max) {
             return randomNumber;
