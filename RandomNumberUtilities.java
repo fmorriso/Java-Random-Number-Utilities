@@ -13,8 +13,8 @@ public class RandomNumberUtilities {
      * Return a random number of type double in the range between the specified minimum (inclusive)
      * and maximum (inclusive).
      *
-     * @param min       - the minimum value in the range to include in the eligible values to return
-     * @param max       - the maximum value in the range  to include in the eligible values to return
+     * @param min       - the minimum value in the range to include in the eligible values to return.  ** INCLUSIVE **
+     * @param max       - the maximum value in the range  to include in the eligible values to return.  ** INCLUSIVE **
      * @apiNote - The nature of how Java's built-in random number generator works
      *            for type double means that, without some intervention, the values returned would almost never
      *            include either the minimum or maximum value even though the minimum
@@ -34,8 +34,8 @@ public class RandomNumberUtilities {
      * inclusive of both the minimum and maximum, using the specified positive, non-zero
      * tolerance.
      *
-     * @param min       - the minimum value in the range
-     * @param max       - the maximum value in the range
+     * @param min       - the minimum value in the range ** INCLUSIVE **
+     * @param max       - the maximum value in the range ** INCLUSIVE **
      * @param tolerance - the tolerance to use when generating the random number.
      * @apiNote - The tolerance is subtracted from the minimum and added to the maximum
      * in order to insure that both the minimum and maximum are included in the range
@@ -60,15 +60,16 @@ public class RandomNumberUtilities {
 
     /**
      * Returns a random whole number between the specified minimum and maximum
-     * @param min - The minimum value in the range (inclusive)
-     * @param max - The maximum value in the range (inclusive)
+     * @param min - The minimum value in the range  ** INCLUSIVE **
+     * @param max - The maximum value in the range  ** INCLUSIVE **
      * @return A random whole number in the range (max - min) + min.
      * @apiNote Since the built-in random number generator does not by design
      *          include max in the eligible range, we have to add 1 to max in order to
      *          make sure it is eligible to be returned.
      */
     public static int getRandomIntInRange(int min, int max) {
-        return rand.nextInt(min, max + 1);
+        int n = rand.nextInt(min, max + 1);
+        return n;
     }
 
 }
