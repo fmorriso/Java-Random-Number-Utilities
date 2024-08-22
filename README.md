@@ -3,6 +3,20 @@
 A set of random number utilities that defaults to including both the minimum and maximum values 
 in the range of eligible return values plus allows some user control of the tolerance value used in
 generating random double precision values.
+## Tools Used
+
+| Tool     |  Version |
+|:---------|---------:|
+| Java     | 22.0.2.0 |
+| VSCode   |   1.92.2 |
+  | IntelliJ | 2024.1.4 |
+## Change History
+
+| Date       | Description                                                                        |
+|:-----------|:-----------------------------------------------------------------------------------|
+| 2024       | Initial creation                                                                   |
+| 2024-08-21 | add additional comments to RandomNumberUtilities                                   |
+
 
 ## Getting started
 

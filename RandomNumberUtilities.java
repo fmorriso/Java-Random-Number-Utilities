@@ -68,8 +68,7 @@ public class RandomNumberUtilities {
      *          make sure it is eligible to be returned.
      */
     public static int getRandomIntInRange(int min, int max) {
-        int n = rand.nextInt(min, max + 1);
-        return n;
+        return rand.nextInt(min, max + 1);
     }
 
 }

@@ -25,8 +25,8 @@ public class Driver {
         testRandomWholeNumber(1, 6, iterations);
 
         // These will throw exceptions, so leave commented unless curious
-        testRandomWholeNumber(6, 1, iterations);
-        testRandomDouble(2, 1, iterations);
+        // testRandomWholeNumber(6, 1, iterations);
+        // testRandomDouble(2, 1, iterations);
     }
 
     private static void testRandomWholeNumber(int min, int max, int iterations) {
