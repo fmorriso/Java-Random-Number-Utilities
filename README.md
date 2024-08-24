@@ -9,13 +9,15 @@ generating random double precision values.
 |:---------|---------:|
 | Java     | 22.0.2.0 |
 | VSCode   |   1.92.2 |
-  | IntelliJ | 2024.1.4 |
+| IntelliJ | 2024.2.0 |
 ## Change History
 
-| Date       | Description                                                                        |
-|:-----------|:-----------------------------------------------------------------------------------|
-| 2024       | Initial creation                                                                   |
-| 2024-08-21 | add additional comments to RandomNumberUtilities                                   |
+| Date       | Description                                      |
+|:-----------|:-------------------------------------------------|
+| 2024       | Initial creation                                 |
+| 2024-08-21 | add additional comments to RandomNumberUtilities |
+| 2024-08-24 | Verify code runs with IntelliJ 2024.2.0.1        |
+
 
 
 ## Getting started

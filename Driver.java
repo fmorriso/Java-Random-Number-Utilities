@@ -29,6 +29,12 @@ public class Driver {
         // testRandomDouble(2, 1, iterations);
     }
 
+
+    /** Test random generation of whole numbers within a range
+     * @param min - the minimum whole number to generate ** INCLUSIVE **
+     * @param max - the maximum whole number to generate ** INCLUSIVE **
+     * @param iterations - The number of iterations to run to verify the randomness
+     */
     private static void testRandomWholeNumber(int min, int max, int iterations) {
 
         System.out.format("Min: %d, Max: %d, Iterations: %s%n", min, max, formatter.format(iterations));
@@ -43,7 +49,7 @@ public class Driver {
 
         for (int i = 0; i < iterations; i++) {
             n = RandomNumberUtilities.getRandomIntInRange(min, max);
-//            System.out.format("x = %d%n", n);
+            // System.out.format("x = %d%n", n);
 
             lowestValue = Math.min(lowestValue, n);
             highestValue = Math.max(highestValue, n);
@@ -57,6 +63,13 @@ public class Driver {
     }
 
 
+    /**
+     * Test the randomness of double precision number generation with an explicit tolerance
+     * @param min - the minimum double precision number to generate ** INCLUSIVE **
+     * @param max - the maximum double precision number to generate ** INCLUSIVE **
+     * @param tolerance - the tolerance to use when dealing with double precision random number generation
+     * @param iterations - The number of iterations to run to verify the randomness
+     */
     private static void testRandomDoubleWithTolerance(double min, double max, double tolerance, int iterations) {
 
         System.out.format("Min: %.1f, Max: %.1f, Iterations: %s, tolerance=%.5f%n", min, max, formatter.format(iterations), tolerance);
@@ -71,7 +84,7 @@ public class Driver {
 
         for (int i = 0; i < iterations; i++) {
             x = RandomNumberUtilities.getRandomDoubleInRangeWithTolerance(min, max, tolerance);
-//            System.out.format("x = %.4f%n", x);
+            // System.out.format("x = %.4f%n", x);
 
             lowestValue = Math.min(lowestValue, x);
             highestValue = Math.max(highestValue, x);
@@ -84,6 +97,13 @@ public class Driver {
         System.out.format("lowestValue = %.6f, count=%d%n", lowestValue, lowestCount);
     }
 
+    /**
+     * Test the randomness of double precision number generation with an implicit tolerance
+     *
+     * @param min - the minimum double precision number to generate ** INCLUSIVE **
+     * @param max - the maximum double precision number to generate ** INCLUSIVE **
+     * @param iterations - The number of iterations to run to verify the randomness
+     */
     private static void testRandomDouble(double min, double max, int iterations) {
 
         double highestValue = 0;
