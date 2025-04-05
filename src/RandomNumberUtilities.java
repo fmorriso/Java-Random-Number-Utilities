@@ -18,8 +18,8 @@ public class RandomNumberUtilities {
      * @apiNote - The nature of how Java's built-in random number generator works
      *            for type double means that, without some intervention, the values returned would almost never
      *            include either the minimum or maximum value even though the minimum
-     *            value is eligible to be returned.  In this implementation, we introduce logic to force
-     *            both the minimum and maximum to be eligible to be returned.
+     *            value is eligible to be returned.  In this implementation, we introduce logic to ensure
+     *            both the minimum and maximum will be eligible to be returned.
      */
     public static double getRandomDoubleInRange(double min, double max) {
 
@@ -30,7 +30,7 @@ public class RandomNumberUtilities {
     }
 
     /**
-     * Return a random number of type double in the range between the specified minimum and maximum,
+     * Return a random number of type double precision in the range between the specified minimum and maximum,
      * inclusive of both the minimum and maximum, using the specified positive, non-zero
      * tolerance.
      *
@@ -38,7 +38,7 @@ public class RandomNumberUtilities {
      * @param max       - the maximum value in the range ** INCLUSIVE **
      * @param tolerance - the tolerance to use when generating the random number.
      * @apiNote - The tolerance is subtracted from the minimum and added to the maximum
-     * in order to insure that both the minimum and maximum are included in the range
+     * in order to ensure that both the minimum and maximum are included in the range
      * of eligible random values.
      */
     public static double getRandomDoubleInRangeWithTolerance(double min, double max, double tolerance) {
