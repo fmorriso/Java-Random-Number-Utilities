@@ -2,7 +2,9 @@
 
 A set of random number utilities that defaults to including both the minimum and maximum values 
 in the range of eligible return values plus allows some user control of the tolerance value used in
-generating random double precision values.
+generating random double precision values. 
+That tolerance value, if made small enough, can help generate random double precision values closer to
+requested minimum and maximum values.
 
 ## Tools Used
 
