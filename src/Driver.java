@@ -37,7 +37,9 @@ public class Driver {
      */
     private static void testRandomWholeNumber(int min, int max, int iterations) {
 
-        System.out.format("Min: %d, Max: %d, Iterations: %s%n", min, max, formatter.format(iterations));
+        System.out.format("testRandomWholeNumber with min: %d, max: %d, iterations: %s%n", min, max, formatter.format(iterations));
+
+//        System.out.format("Min: %d, Max: %d, Iterations: %s%n", min, max, formatter.format(iterations));
 
         int highestValue = Integer.MIN_VALUE;
         int highestCount = 0;
@@ -60,6 +62,8 @@ public class Driver {
 
         System.out.format("highestValue = %d, count = %d%n", highestValue, highestCount);
         System.out.format("lowestValue = %d, count=%d%n", lowestValue, lowestCount);
+
+        System.out.println("=".repeat(80));
     }
 
 
@@ -71,8 +75,7 @@ public class Driver {
      * @param iterations - The number of iterations to run to verify the randomness
      */
     private static void testRandomDoubleWithTolerance(double min, double max, double tolerance, int iterations) {
-
-        System.out.format("Min: %.1f, Max: %.1f, Iterations: %s, tolerance=%.5f%n", min, max, formatter.format(iterations), tolerance);
+        System.out.format("testRandomDoubleWithTolerance with min: %.1f, max: %.1f, tolerance: %.1f, iterations: %s%n", min, max, tolerance, formatter.format(iterations));
 
         double highestValue = 0;
         int highestCount = 0;
@@ -95,6 +98,8 @@ public class Driver {
 
         System.out.format("highestValue = %.6f, count = %d%n", highestValue, highestCount);
         System.out.format("lowestValue = %.6f, count=%d%n", lowestValue, lowestCount);
+
+        System.out.println("=".repeat(80));
     }
 
     /**
@@ -105,14 +110,13 @@ public class Driver {
      * @param iterations - The number of iterations to run to verify the randomness
      */
     private static void testRandomDouble(double min, double max, int iterations) {
+        System.out.format("testRandomDouble with min: %.1f, max: %.1f, iterations: %s%n", min, max, formatter.format(iterations));
 
         double highestValue = 0;
         int highestCount = 0;
 
         double lowestValue = Double.MAX_VALUE;
         int lowestCount = 0;
-
-        System.out.format("Min: %.1f, Max: %.1f, Iterations: %s%n", min, max, formatter.format(iterations));
 
         double x;
         for (int i = 0; i < iterations; i++) {
@@ -126,6 +130,8 @@ public class Driver {
 
         System.out.format("highestValue = %.6f, count = %d%n", highestValue, highestCount);
         System.out.format("lowestValue = %.6f, count=%d%n", lowestValue, lowestCount);
+
+        System.out.println("=".repeat(80));
     }
 
     /**

@@ -10,15 +10,16 @@ requested minimum and maximum values.
 
 | Tool     |  Version |
 |:---------|---------:|
-| Java     | 24.0.0.0 |
+| Java     | 24.0.1.0 |
 | VSCode   |   1.99.0 |
-| IntelliJ | 2024.3.5 |
+| IntelliJ | 2025.1.1 |
 
 ## Change History
 
-| Date       | Description                                      |
-|:-----------|:-------------------------------------------------|
-| 2024       | Initial creation                                 |
-| 2024-08-21 | add additional comments to RandomNumberUtilities |
-| 2024-08-24 | Verify code runs with IntelliJ 2024.2.0.1        |
-| 2025-04-05 | Move repo from GitLab to GitHub                  |
+| Date       | Description                                                    |
+|:-----------|:---------------------------------------------------------------|
+| 2024       | Initial creation                                               |
+| 2024-08-21 | add additional comments to RandomNumberUtilities               |
+| 2024-08-24 | Verify code runs with IntelliJ 2024.2.0.1                      |
+| 2025-04-05 | Move repo from GitLab to GitHub                                |
+| 2025-05-08 | separate output to make start/end of each test easier to spot. |
