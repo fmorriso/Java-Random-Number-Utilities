@@ -8,11 +8,11 @@ requested minimum and maximum values.
 
 ## Tools Used
 
-| Tool     |  Version |
-|:---------|---------:|
-| Java     | 24.0.1.0 |
-| VSCode   |   1.99.0 |
-| IntelliJ | 2025.1.1 |
+| Tool     |    Version |
+|:---------|-----------:|
+| Java     |   24.0.1.0 |
+| VSCode   |    1.100.0 |
+| IntelliJ | 2025.1.1.1 |
 
 ## Change History
 
@@ -23,3 +23,4 @@ requested minimum and maximum values.
 | 2024-08-24 | Verify code runs with IntelliJ 2024.2.0.1                      |
 | 2025-04-05 | Move repo from GitLab to GitHub                                |
 | 2025-05-08 | separate output to make start/end of each test easier to spot. |
+| 2025-05-11 | verify code works with IntelliJ 2025.1.1.1 and VSCode 1.100.1  |
