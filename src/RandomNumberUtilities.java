@@ -6,7 +6,7 @@ import java.util.Random;
  */
 public class RandomNumberUtilities {
 
-    private static Random rand = new Random();
+    private static final Random rand = new Random();
 
 
     /**
@@ -28,6 +28,7 @@ public class RandomNumberUtilities {
         final double tolerance = (max - min) / 10_000;
         return getRandomDoubleInRangeWithTolerance(min, max, tolerance);
     }
+
 
     /**
      * Return a random number of type double precision in the range between the specified minimum and maximum,
@@ -68,7 +69,22 @@ public class RandomNumberUtilities {
      *          make sure it is eligible to be returned.
      */
     public static int getRandomIntInRange(int min, int max) {
-        return rand.nextInt(min, max + 1);
+        return getRandomIntInRange(min, max, true);
+    }
+
+    /**
+     * Returns a random whole number between the specified minimum and maximum
+     * @param min - The minimum value in the range
+     * @param max - The maximum value in the range
+     * @param inclusive - true if max is included in the range of returned values; otherwise max is not included.
+     * @return A random whole number in the range (max - min) + min or (max - min + 1)  + min depending on inclusive.
+     * @apiNote Since the built-in random number generator does not by design
+     *          include max in the eligible range, when inclusive is true, we have to add 1 to max in order to
+     *          make sure it is eligible to be returned.
+     */
+    public static int getRandomIntInRange(int min, int max, boolean inclusive) {
+        if (inclusive) return rand.nextInt(min, max + 1);
+        return rand.nextInt(max - min) + min;
     }
 
 }

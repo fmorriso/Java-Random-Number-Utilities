@@ -24,3 +24,4 @@ requested minimum and maximum values.
 | 2025-04-05 | Move repo from GitLab to GitHub                                |
 | 2025-05-08 | separate output to make start/end of each test easier to spot. |
 | 2025-05-11 | verify code works with IntelliJ 2025.1.1.1 and VSCode 1.100.1  |
+| 2025-05-13 | add getRandomIntInRange(int min, int max, boolean inclusive)   |
