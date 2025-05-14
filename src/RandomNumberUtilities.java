@@ -15,7 +15,7 @@ public class RandomNumberUtilities {
      *
      * @param min - the minimum value in the range to include in the eligible values to return.  ** INCLUSIVE **
      * @param max - the maximum value in the range  to include in the eligible values to return.  ** INCLUSIVE **
-     * @return  - a double-precision number.
+     * @return - a double-precision number.
      * @apiNote - The nature of how Java's built-in random number generator works
      * for type double means that, without some intervention, the values returned would almost never
      * include either the minimum or maximum value even though the minimum
@@ -31,17 +31,16 @@ public class RandomNumberUtilities {
     }
 
     /**
-     *
-     * @param min - the minimum value in the range to include in the eligible values to return.
-     * @param max - the maximum value in the range  to include in the eligible values to return.
+     * @param min       - the minimum value in the range to include in the eligible values to return.
+     * @param max       - the maximum value in the range  to include in the eligible values to return.
      * @param inclusive - true if the max value should be included in the eligible values generated.
-     * @return  - a double-precision number.
+     * @return - a double-precision number.
      */
     public static double getRandomDoubleInRange(double min, double max, boolean inclusive) {
-        if(inclusive) {
+        if (inclusive) {
             return getRandomDoubleInRange(min, max);
         }
-        return getRandomDoubleInRange(min, max - max/10_000.0);
+        return getRandomDoubleInRange(min, max - max / 10_000.0);
     }
 
 
