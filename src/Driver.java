@@ -21,6 +21,9 @@ public class Driver {
         testRandomDoubleWithTolerance(-100, 100, 0.1, iterations);
         testRandomDoubleWithTolerance(-100, 100, 1.0, iterations);
 
+        testRandomDoubleInclusive(-100, 200, iterations);
+        testRandomDoubleExclusive(-100, 200, iterations);
+
         testRandomWholeNumber(100, 200, iterations);
         testRandomWholeNumber(1, 6, iterations);
 
@@ -121,6 +124,57 @@ public class Driver {
         double x;
         for (int i = 0; i < iterations; i++) {
             x = RandomNumberUtilities.getRandomDoubleInRange(min, max);
+            lowestValue = Math.min(lowestValue, x);
+            highestValue = Math.max(highestValue, x);
+            // System.out.format("x = %.2f%n", x);
+            if (x == max) highestCount++;
+            else if (x == min) lowestCount++;
+        }
+
+        System.out.format("highestValue = %.6f, count = %d%n", highestValue, highestCount);
+        System.out.format("lowestValue = %.6f, count=%d%n", lowestValue, lowestCount);
+
+        System.out.println("=".repeat(80));
+    }
+
+    private static void testRandomDoubleInclusive(double min, double max, int iterations) {
+        System.out.format("testRandomDoubleInclusive with min: %.1f, max: %.1f, iterations: %s%n", min, max, formatter.format(iterations));
+
+        double highestValue = 0;
+        int highestCount = 0;
+
+        double lowestValue = Double.MAX_VALUE;
+        int lowestCount = 0;
+
+        double x;
+        for (int i = 0; i < iterations; i++) {
+            x = RandomNumberUtilities.getRandomDoubleInRange(min, max, true);
+            lowestValue = Math.min(lowestValue, x);
+            highestValue = Math.max(highestValue, x);
+            // System.out.format("x = %.2f%n", x);
+            if (x == max) highestCount++;
+            else if (x == min) lowestCount++;
+        }
+
+        System.out.format("highestValue = %.6f, count = %d%n", highestValue, highestCount);
+        System.out.format("lowestValue = %.6f, count=%d%n", lowestValue, lowestCount);
+
+        System.out.println("=".repeat(80));
+    }
+
+
+    private static void testRandomDoubleExclusive(double min, double max, int iterations) {
+        System.out.format("testRandomDoubleExclusive with min: %.1f, max: %.1f, iterations: %s%n", min, max, formatter.format(iterations));
+
+        double highestValue = 0;
+        int highestCount = 0;
+
+        double lowestValue = Double.MAX_VALUE;
+        int lowestCount = 0;
+
+        double x;
+        for (int i = 0; i < iterations; i++) {
+            x = RandomNumberUtilities.getRandomDoubleInRange(min, max, false);
             lowestValue = Math.min(lowestValue, x);
             highestValue = Math.max(highestValue, x);
             // System.out.format("x = %.2f%n", x);
